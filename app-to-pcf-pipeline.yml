@@ -1,0 +1,38 @@
+resources:
+- name: java-app-release
+  type: s3
+  source:
+    bucket: oec-artifacts
+    versioned_file: spring-music.jar
+    access_key_id: AKIAJLMKFATKPTLZ2TOQ
+    secret_access_key: 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
+
+- name: java-app-manifest
+  type: s3
+  source:
+    bucket: oec-artifacts
+    versioned_file: manifest.yml
+    access_key_id: AKIAJLMKFATKPTLZ2TOQ
+    secret_access_key: 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
+
+- name: resource-deploy-java-app
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: true
+
+jobs:
+- name: job-deploy-app
+  serial: true
+  plan:
+  - get: java-app-release
+    trigger: true
+  - get: java-app-manifest
+  - put: resource-deploy-java-app
+    params:
+      manifest: java-app-manifest/manifest.yml
+      path: java-app-release/spring-music.jar
