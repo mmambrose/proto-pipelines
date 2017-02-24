@@ -5,8 +5,8 @@ resources:
   source:
     bucket: oec-artifacts
     versioned_file: spring-music.jar
-    access_key_id: AKIAJLMKFATKPTLZ2TOQ
-    secret_access_key: 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
+    access_key_id: change me
+    secret_access_key: change me
 
 #get manifest file from s3
 - name: java-app-manifest
