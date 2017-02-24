@@ -1,4 +1,5 @@
 resources:
+#get jar file from s3
 - name: java-app-release
   type: s3
   source:
@@ -7,6 +8,7 @@ resources:
     access_key_id: AKIAJLMKFATKPTLZ2TOQ
     secret_access_key: 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
 
+#get manifest file from s3
 - name: java-app-manifest
   type: s3
   source:
@@ -15,6 +17,7 @@ resources:
     access_key_id: AKIAJLMKFATKPTLZ2TOQ
     secret_access_key: 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
 
+#resource for cf environment
 - name: resource-deploy-java-app
   type: cf
   source:
@@ -26,6 +29,7 @@ resources:
     skip_cert_check: true
 
 jobs:
+  #deploy app to cf with cf push
 - name: job-deploy-app
   serial: true
   plan:
