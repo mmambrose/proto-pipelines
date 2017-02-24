@@ -3,3 +3,5 @@ cf-username: CHANGE ME
 cf-password: CHANGE ME
 cf-organization: CHANGE ME
 cf-space: CHANGE ME
+aws-access-key: CHANGE ME
+secret-access-key: CHANGE ME
