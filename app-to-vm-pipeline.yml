@@ -16,7 +16,7 @@ resources:
 - name: java-app-manifest
   type: s3
   source:
-    bucket: oec-artifacts#
+    bucket: oec-artifacts
     versioned_file: manifest.yml
     access_key_id: {{aws-access-key}}
     secret_access_key: {{aws-secret-access-key}}
@@ -39,21 +39,24 @@ jobs:
   plan:
   - get: java-app-release
   - get: java-app-manifest
-  - get: proto-pipelines/packer-code
+  - get: proto-pipelines
   - task: prepare-release
     file: proto-pipelines/tasks/prepare-release.yml
+    params:
+      CONFIG: |
+        "aws_region": "us-east-1", "source_ami": "ami-822bfa94"
     # cp artifact-from-s3/myapp-*.jar prepare-release/.
     # create any json/yml file for ansible
-  - put: packer
+  - put: build-ami
     params:
-      template: prepare-release/packer-file.json
+      template: prepare-release/packer-template.json
       var_file: prepare-release/secrets.json
 
-- name: deploy-ami
-  plan:
-  - task: deploy-my-boot-app
-    file: path/to/aws-cli-image/for launching amis.sh
-    params:
-      HOSTNAME:
-      USERNAME:
-      PASSWORD:
+#- name: deploy-ami
+#  plan:
+#  - task: deploy-my-boot-app
+#    file: path/to/aws-cli-image/for launching amis.sh
+#    params:
+#      HOSTNAME:
+#      USERNAME:
+#      PASSWORD:
