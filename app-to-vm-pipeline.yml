@@ -50,7 +50,7 @@ jobs:
   - put: build-ami
     params:
       template: prepare-release/packer-code/packer-template.json
-      var_file: prepare-release/packer-code/secrets.json
+      var_file: prepare-release/secrets.json
 
 #- name: deploy-ami
 #  plan:
