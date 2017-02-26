@@ -22,9 +22,8 @@
 
   "provisioners": [
     {
-      "type": "chef-solo",
-      "cookbook_paths": ["cookbooks"],
-      "run_list": ["concourse"]
+      "type": "shell",
+      "script": ["packer-script.sh"]
     }
   ]
 }

@@ -19,4 +19,4 @@ params:
   CONFIG:
 
 run:
-  path: concourse-packer/tasks/prepare-release.sh
+  path: proto-pipelines/tasks/prepare-release.sh

@@ -49,8 +49,8 @@ jobs:
     # create any json/yml file for ansible
   - put: build-ami
     params:
-      template: prepare-release/packer-template.json
-      var_file: prepare-release/secrets.json
+      template: prepare-release/packer-code/packer-template.json
+      var_file: prepare-release/packer-code/secrets.json
 
 #- name: deploy-ami
 #  plan:
