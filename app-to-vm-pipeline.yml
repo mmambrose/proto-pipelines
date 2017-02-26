@@ -1,0 +1,59 @@
+resource_types:
+- name: packer
+  type: docker-image
+  source:
+    repository: jdub/packer-resource
+
+resources:
+- name: java-app-release
+  type: s3
+  source:
+    bucket: oec-artifacts
+    versioned_file: spring-music.jar
+    access_key_id: {{aws-access-key}}
+    secret_access_key: {{aws-secret-access-key}}
+
+- name: java-app-manifest
+  type: s3
+  source:
+    bucket: oec-artifacts#
+    versioned_file: manifest.yml
+    access_key_id: {{aws-access-key}}
+    secret_access_key: {{aws-secret-access-key}}
+
+- name: build-ami
+  type: packer
+  source:
+    aws_access_key_id: {{aws-access-key}}
+    aws_secret_access_key: {{aws-secret-access-key}}
+    region: us-east-1
+
+- name: proto-pipelines
+  type: git
+  source:
+    uri: https://github.com/mambrose-pivotal/proto-pipelines
+    branch: master
+
+jobs:
+- name: app-ami
+  plan:
+  - get: java-app-release
+  - get: java-app-manifest
+  - get: proto-pipelines/packer-code
+  - task: prepare-release
+    file: proto-pipelines/tasks/prepare-release.yml
+    # cp artifact-from-s3/myapp-*.jar prepare-release/.
+    # create any json/yml file for ansible
+  - put: packer
+    params:
+      template: prepare-release/packer-file.json
+      var_file: prepare-release/secrets.json
+
+- name: deploy-ami
+  plan:
+  - task: deploy-my-boot-app
+    file: path/to/aws-cli-image/for launching amis.sh
+    params:
+      HOSTNAME:
+      USERNAME:
+      PASSWORD:

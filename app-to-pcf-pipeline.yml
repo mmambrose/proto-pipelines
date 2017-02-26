@@ -1,23 +1,20 @@
 resources:
-#get jar file from s3
 - name: java-app-release
   type: s3
   source:
     bucket: oec-artifacts
     versioned_file: spring-music.jar
-    access_key_id: change me
-    secret_access_key: change me
+    access_key_id: {{aws-access-key}}
+    secret_access_key: {{aws-secret-access-key}}
 
-#get manifest file from s3
 - name: java-app-manifest
   type: s3
   source:
     bucket: oec-artifacts
     versioned_file: manifest.yml
-    access_key_id: change me
-    secret_access_key: change me
+    access_key_id: {{aws-access-key}}
+    secret_access_key: {{aws-secret-access-key}}
 
-#resource for cf environment
 - name: resource-deploy-java-app
   type: cf
   source:
@@ -29,7 +26,6 @@ resources:
     skip_cert_check: true
 
 jobs:
-  #deploy app to cf with cf push
 - name: job-deploy-app
   serial: true
   plan:
