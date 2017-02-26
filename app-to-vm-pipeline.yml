@@ -26,7 +26,7 @@ resources:
   source:
     aws_access_key_id: {{aws-access-key}}
     aws_secret_access_key: {{aws-secret-access-key}}
-    region: us-east-1
+    region: us-west-2
 
 - name: proto-pipelines
   type: git
@@ -44,7 +44,7 @@ jobs:
     file: proto-pipelines/tasks/prepare-release.yml
     params:
       CONFIG: |
-        "aws_region": "us-east-1", "source_ami": "ami-822bfa94"
+        "aws_region": "us-west-2", "source_ami": "	ami-17ac2c77"
     # cp artifact-from-s3/myapp-*.jar prepare-release/.
     # create any json/yml file for ansible
   - put: build-ami
