@@ -8,4 +8,4 @@ cat <<EOF > prepare-release/secrets.json
 { $CONFIG }
 EOF
 
-ls -a
+ls -R
