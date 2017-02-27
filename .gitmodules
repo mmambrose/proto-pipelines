@@ -1,0 +1,3 @@
+[submodule "ansible-springboot-role"]
+	path = packer-code/roles/packer-code/roles/ansible-springboot-role
+	url = https://github.com/pellepelster/ansible-springboot-role
