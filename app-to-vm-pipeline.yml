@@ -44,7 +44,7 @@ jobs:
     file: proto-pipelines/tasks/prepare-release.yml
     params:
       CONFIG: |
-        "aws_region": "us-west-2", "source_ami": "	ami-17ac2c77"
+        "aws_region": "us-west-2", "source_ami": "ami-17ac2c77"
     # cp artifact-from-s3/myapp-*.jar prepare-release/.
     # create any json/yml file for ansible
   - put: build-ami
