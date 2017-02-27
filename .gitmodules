@@ -1,3 +1,0 @@
-[submodule "ansible-springboot-role"]
-	path = packer-code/roles/ansible-springboot-role
-	url = https://github.com/mambrose-pivotal/ansible-springboot-role
