@@ -1,0 +1,5 @@
+---
+
+- copy:
+    src: /prepare-release/spring-music.jar
+    dest: ~/ubuntu/spring-music.jar
