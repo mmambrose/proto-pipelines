@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-roles:
+  roles:
 - { role: ansible-springboot-role,
     spring_boot_file_source_local: 'spring-music.jar'
   }
