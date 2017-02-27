@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - ansible-springboot-role
+    - roles/ansible-springboot-role
