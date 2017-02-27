@@ -1,4 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - packer-code/roles/ansible-springboot-role
+    - ansible-springboot-role
