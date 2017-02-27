@@ -22,8 +22,12 @@
 
   "provisioners": [
     {
+      "type": "shell",
+      "script": "install-ansible.sh"
+    }
+    {
       "type": "ansible",
-      "playbook_file": "playbook.yml"
+      "playbook_file": "./playbook.yml"
     }
   ]
 }
