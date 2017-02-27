@@ -1,5 +1,7 @@
 ---
 
-- copy:
-    src: /prepare-release/spring-music.jar
-    dest: ~/ubuntu/spring-music.jar
+hosts: localhost
+roles:
+- { role: ansible-springboot-role,
+    spring_boot_file_source_local: 'spring-music.jar'
+  }
