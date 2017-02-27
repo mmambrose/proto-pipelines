@@ -28,7 +28,8 @@
     {
       "type": "ansible-local",
       "playbook_file": "./playbook.yml",
-      "role_paths":  "./roles/"
+      "playbook_dir": "../packer-code",
+      "role_paths":  "./roles/ansible-springboot-role"
         }
   ]
 }
