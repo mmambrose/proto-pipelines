@@ -1,0 +1,3 @@
+[submodule "ansible-role"]
+	path = roles/ansible-springboot-role
+	url = https://github.com/mambrose-pivotal/ansible-springboot-role
