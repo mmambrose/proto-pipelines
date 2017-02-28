@@ -23,7 +23,8 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "install-ansible-script.sh"
+      "script": "install-ansible-script.sh",
+      "execute-command": "sudo '{{ .Path}}'"
     },
     {
       "type": "ansible-local",
