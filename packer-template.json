@@ -28,7 +28,7 @@
     {
       "type": "ansible-local",
       "playbook_file": "./playbook.yml",
-      "playbook_dir": "prepare-release/"
+      "playbook_dir": "./",
         }
   ]
 }
