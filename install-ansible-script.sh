@@ -104,3 +104,7 @@ if [ ! $(which ansible-playbook) ]; then
   fi
 
 fi
+
+ls -ltra
+dpkg -s ansible
+python -v
