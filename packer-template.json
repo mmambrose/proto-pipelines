@@ -28,8 +28,7 @@
     {
       "type": "ansible-local",
       "playbook_file": "./playbook.yml",
-      "playbook_dir": "../",
-      "role_paths":  "./roles/ansible-springboot-role"
+      "playbook_dir": "prepare-release/."
         }
   ]
 }
