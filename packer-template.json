@@ -23,7 +23,7 @@
   "provisioners": [
     {
       "type": "shell",
-      "script": "install-ansible.sh"
+      "script": "install-ansible-script.sh"
     },
     {
       "type": "ansible-local",
