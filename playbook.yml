@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
   vars:
-    spring_boot_file_source_local: 'spring-music.jar'
+    spring_boot_file_source_local: java-app-release
   roles:
     - ansible-springboot-role
