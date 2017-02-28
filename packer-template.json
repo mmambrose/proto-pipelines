@@ -24,7 +24,7 @@
     {
       "type": "shell",
       "script": "install-ansible-script.sh",
-      "execute-command": "sudo '{{ .Path}}'"
+      "execute_command": "sudo '{{ .Path}}'"
     },
     {
       "type": "ansible-local",
