@@ -15,7 +15,7 @@
     "source_ami": "{{user `source_ami`}}",
     "instance_type": "m3.large",
     "ssh_username": "ubuntu",
-    "ami_name": "pivotal-oec-ami-clean-up",
+    "ami_name": "pivotal-oec-ami-{{timestamp}}",
     "ami_description": "https://github.com/mambrose-pivotal/proto-pipelines/",
     "ami_groups": [ "all" ]
   }],

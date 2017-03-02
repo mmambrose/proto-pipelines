@@ -9,7 +9,7 @@ resources:
   type: s3
   source:
     bucket: oec-artifacts
-    versioned_file: spring-music.jar
+    versioned_file: {{java-app-name}}
     access_key_id: {{aws-access-key}}
     secret_access_key: {{aws-secret-access-key}}
 
