@@ -4,7 +4,8 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "aws_region": "",
-    "source_ami": ""
+    "source_ami": "",
+    "java-app-name": ""
   },
 
   "builders": [{
@@ -17,7 +18,8 @@
     "ssh_username": "ubuntu",
     "ami_name": "pivotal-oec-ami-{{timestamp}}",
     "ami_description": "https://github.com/mambrose-pivotal/proto-pipelines/",
-    "ami_groups": [ "all" ]
+    "ami_groups": [ "all" ],
+    "java-app-name": "{{user `java-app-name`}}"
   }],
 
   "provisioners": [
