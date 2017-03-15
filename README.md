@@ -3,7 +3,8 @@ Repository for two pipelines that take the Spring Music (https://github.com/clou
 
 <h1>Prereq</h1>
 
-Application jar file and manifest in S3 bucket in AWS.
+Pipelines use S3 resource to get an application jar file and manifest.
+This could be replaced by other means of getting release artifacts (github release, etc.).
 
 <h1>Pipeline 1 (app-to-pcf)</h1>
 
